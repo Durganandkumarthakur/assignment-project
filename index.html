@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/" rel="dns-prefetch"/>
 <link href="https://fonts.gstatic.com/" rel="dns-prefetch"/>
 <link as="style" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="preload"/>
-<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" media="print" onload="this.media=[..."/>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" media="print" onload="this.media=[...]
 <meta content="tcongs is a UI UX design agency delivering user-centered UI UX design for web, mobile, and SaaS products using Figma and Webflow." name="description"/>
 <meta content="tcongs - UI UX Design Agency" name="title"/>
 <link href="index.html" rel="canonical"/>
@@ -99,32 +99,5 @@
     </script>
 <title>Web &amp; App Development Company</title>
 <!-- (rest of original head and body content unchanged) -->
-
-<!-- Injector script to insert the GIF after the hero heading -->
-<script>
-(function(){
-  try{
-    var matchText = /Build\. Scale\. Grow Your Digital Business\./i;
-    var candidates = document.querySelectorAll('h1,h2,h3,h4,h5,p,div');
-    for(var i=0;i<candidates.length;i++){
-      var n=candidates[i];
-      if(n.textContent && matchText.test(n.textContent)){
-        // avoid inserting multiple times
-        if(document.querySelector('img[data-injected-gif]')) return;
-        var img = document.createElement('img');
-        img.src = 'frontend-assets/images/video.gif';
-        img.setAttribute('data-injected-gif','1');
-        img.alt = 'hero animation';
-        img.style.width = '100%';
-        img.style.maxWidth = '900px';
-        img.style.display = 'block';
-        img.style.marginTop = '16px';
-        n.insertAdjacentElement('afterend', img);
-        return;
-      }
-    }
-  }catch(e){console.error(e)}
-})();
-</script>
 
 </html>
