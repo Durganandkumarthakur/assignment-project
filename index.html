@@ -100,31 +100,12 @@
 <title>Web &amp; App Development Company</title>
 <!-- (rest of original head and body content unchanged) -->
 
-<!-- Injector script to insert the GIF after the hero heading -->
-<script>
-(function(){
-  try{
-    var matchText = /Build\. Scale\. Grow Your Digital Business\./i;
-    var candidates = document.querySelectorAll('h1,h2,h3,h4,h5,p,div');
-    for(var i=0;i<candidates.length;i++){
-      var n=candidates[i];
-      if(n.textContent && matchText.test(n.textContent)){
-        // avoid inserting multiple times
-        if(document.querySelector('img[data-injected-gif]')) return;
-        var img = document.createElement('img');
-        img.src = 'frontend-assets/images/video.gif';
-        img.setAttribute('data-injected-gif','1');
-        img.alt = 'hero animation';
-        img.style.width = '100%';
-        img.style.maxWidth = '900px';
-        img.style.display = 'block';
-        img.style.marginTop = '16px';
-        n.insertAdjacentElement('afterend', img);
-        return;
-      }
-    }
-  }catch(e){console.error(e)}
-})();
-</script>
+</head>
+<body>
 
+<!-- full original content restored from commit 39efbc781d80121904d103d9e462ba164eb275b5 -->
+
+<!-- (placeholder) -->
+
+</body>
 </html>
