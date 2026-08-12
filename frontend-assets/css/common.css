@@ -1,0 +1,520 @@
+.main-heading {
+    font-size: 72px;
+    line-height: 96px
+}
+
+.hero-text {
+    margin-top: 12px;
+    margin-bottom: 32px;
+}
+
+.hero-star {
+    top: 46%;
+    left: -55px;
+}
+
+@media(max-width: 575px) {
+    .sm_py_48 {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .main-heading {
+        font-size: 36px;
+        line-height: 50px
+    }
+
+    .hero-text {
+        margin-top: 16px;
+        margin-bottom: 24px;
+    }
+
+    .hero-star {
+        top: 18%;
+        left: 0;
+    }
+}
+
+/* -------------------------------------------------------
+   Lead modal ("Let's Talk") + Thank you modal (global)
+   Theme-aligned: dark + primary gradient accents
+------------------------------------------------------- */
+.tcongs-modal.hidden,
+.hidden {
+    display: none !important;
+}
+
+.tcongs-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+}
+
+.tcongs-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.tcongs-modal__dialog {
+    position: relative;
+    width: min(380px, calc(100vw - 32px));
+    border-radius: 14px;
+    padding: 10px 12px;
+    background:
+        linear-gradient(var(--color-black-200), var(--color-black-200)) padding-box,
+        linear-gradient(120deg, rgba(229, 26, 75, 0.95), rgba(226, 236, 7, 0.85)) border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(229, 26, 75, 0.4) transparent;
+}
+
+.tcongs-modal__dialog::-webkit-scrollbar {
+    width: 4px;
+}
+
+.tcongs-modal__dialog::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tcongs-modal__dialog::-webkit-scrollbar-thumb {
+    background: rgba(229, 26, 75, 0.4);
+    border-radius: 4px;
+}
+
+.tcongs-modal__dialog--sm {
+    width: min(460px, 100%);
+    padding: 22px;
+}
+
+.tcongs-modal__brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4px;
+    opacity: 0.95;
+}
+
+.tcongs-modal__title {
+    margin: 2px 0 2px;
+    text-align: center;
+    color: var(--color-white);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.tcongs-modal__subtitle {
+    margin: 0 0 6px;
+    text-align: center;
+    color: var(--color-white-70);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.tcongs-modal__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-white);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 10;
+    transition: background 0.2s, transform 0.2s;
+}
+.tcongs-modal__close:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.tcongs-form {
+    display: grid;
+    gap: 6px;
+}
+
+.tcongs-form__row {
+    display: grid;
+    gap: 2px;
+}
+
+.tcongs-label {
+    color: var(--color-white-70);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.tcongs-input,
+.tcongs-textarea,
+.tcongs-select {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
+    padding: 7px 10px;
+    outline: none;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 12px;
+}
+
+.tcongs-textarea {
+    resize: vertical;
+    min-height: 52px;
+}
+
+.tcongs-input:focus,
+.tcongs-textarea:focus,
+.tcongs-select:focus {
+    border-color: rgba(229, 26, 75, 0.75);
+    box-shadow: 0 0 0 3px rgba(229, 26, 75, 0.18);
+}
+
+.tcongs-phone {
+    display: block; /* Let iti handle the layout */
+}
+
+/* Ensure intl-tel-input dropdown is contained and scrollable */
+.iti {
+    width: 100%;
+}
+.iti__country-list {
+    background-color: #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    max-height: 300px !important;
+    width: 100% !important; /* Full width of the input area */
+    overflow-x: hidden !important;
+    padding: 0 !important;
+    z-index: 9999 !important;
+}
+.iti__search-container {
+    padding: 10px !important;
+    background-color: #000000 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 100% !important;
+}
+.iti__search-input {
+    width: 100% !important;
+    padding: 10px 14px !important;
+    margin: 0 !important;
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    outline: none !important;
+    font-size: 14px !important;
+}
+.iti__search-input:focus {
+    border-color: var(--color-primary) !important;
+}
+.iti__country {
+    padding: 12px 16px !important;
+    background-color: #000000 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+.iti__country:hover, .iti__country.iti__highlight {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.iti__country-name {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    flex-grow: 1 !important;
+}
+.iti__dial-code {
+    color: var(--color-white-60) !important;
+    font-size: 14px !important;
+    margin-left: auto !important;
+}
+.iti__flag-container {
+    padding: 2px !important;
+}
+
+.iti--allow-dropdown input {
+    padding-left: 52px !important;
+}
+
+.tcongs-error {
+    min-height: 14px;
+    color: var(--color-danger);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tcongs-error--top {
+    min-height: 0;
+    margin-bottom: 6px;
+}
+
+.tcongs-btn {
+    width: 100%;
+    border-radius: 12px;
+    border: 0;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #0D0D0D;
+    background: linear-gradient(120deg, rgba(226, 236, 7, 1), rgba(229, 26, 75, 1));
+}
+
+.tcongs-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+body.tcongs-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 520px) {
+    .tcongs-phone {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------------------------------------
+   Floating AI Chatbot (global)
+------------------------------------------------------- */
+#tcongs-chatbot {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9998;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+#tcongs-chatbot > * {
+    pointer-events: auto;
+}
+
+.tcongs-chatbot__fab {
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: #0D0D0D;
+    font-weight: 800;
+    font-size: 13px;
+    background: linear-gradient(120deg, rgba(226, 236, 7, 1), rgba(229, 26, 75, 1));
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tcongs-chatbot__fab-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(13, 13, 13, 0.85);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.tcongs-chatbot__panel {
+    position: fixed;
+    right: 18px;
+    bottom: 70px;
+    width: min(320px, calc(100vw - 36px));
+    height: 490px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(11, 11, 11, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65);
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+}
+
+.tcongs-chatbot__header {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tcongs-chatbot__title {
+    color: var(--color-white);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.tcongs-chatbot__close {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-white);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.2s;
+}
+
+.tcongs-chatbot__messages {
+    padding: 12px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tcongs-chatbot__msg {
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    max-width: 82%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tcongs-chatbot__msg--bot {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-white);
+    align-self: flex-start;
+}
+
+.tcongs-chatbot__msg--user {
+    background: rgba(229, 26, 75, 0.14);
+    color: var(--color-white);
+    align-self: flex-end;
+    border-color: rgba(229, 26, 75, 0.22);
+}
+
+.tcongs-chatbot__composer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    padding: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tcongs-chatbot__input {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
+    padding: 10px 12px;
+    outline: none;
+    font-size: 13px;
+}
+
+.tcongs-chatbot__send {
+    border-radius: 12px;
+    border: 0;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-weight: 800;
+    color: #0D0D0D;
+    background: linear-gradient(120deg, rgba(226, 236, 7, 1), rgba(229, 26, 75, 1));
+}
+
+/* Chatbot Quick Reply Chips (Tcongs style) */
+.tcongs-chatbot__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 5px;
+    align-self: flex-start;
+}
+
+.tcongs-chatbot__chip-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(229, 26, 75, 0.5);
+    color: var(--color-white, #ffffff);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tcongs-chatbot__chip-btn:hover {
+    background: linear-gradient(120deg, rgba(226, 236, 7, 1), rgba(229, 26, 75, 1));
+    color: #0D0D0D;
+    border-color: transparent;
+}
+
+/* Chatbot Avatar & Header Layout Styles */
+.tcongs-chatbot__avatar-container {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.tcongs-chatbot__avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tcongs-chatbot__status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #2ecc71;
+    border: 2px solid rgba(11, 11, 11, 0.98);
+    border-radius: 50%;
+}
+
+.tcongs-chatbot__title-container {
+    flex-grow: 1;
+    margin-left: 12px;
+}
+
+.tcongs-chatbot__status {
+    color: #2ecc71;
+    font-size: 11px;
+    margin: 2px 0 0 0;
+}
+
+@media (max-width: 480px) {
+    .tcongs-chatbot__panel {
+        height: 400px;
+        bottom: 70px;
+        right: 10px;
+        width: min(320px, calc(100vw - 20px));
+    }
+}
